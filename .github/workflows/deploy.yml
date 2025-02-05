@@ -21,12 +21,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
       
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install next react react-dom lucide-react
+          npm install -D typescript @types/node @types/react @types/react-dom tailwindcss postcss autoprefixer eslint
       
-      - name: Create lock file
+      - name: Generate lock file
         run: npm install --package-lock-only
       
       - name: Setup Pages
