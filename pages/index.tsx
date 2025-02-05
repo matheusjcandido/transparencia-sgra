@@ -19,12 +19,8 @@ const mockData = {
   }
 };
 
-const IndexPage: React.FC = () => {
-  const [currentScreen, setCurrentScreen] = useState('main');
-  const [dashboardData] = useState(mockData);
-  
-export default function App() {
-  const [currentScreen, setCurrentScreen] = useState('main');
+export default function IndexPage() {
+  const [currentScreen, setCurrentScreen] = useState<string>('main');
   const [dashboardData] = useState(mockData);
 
   const MainScreen = () => (
@@ -222,5 +218,3 @@ export default function App() {
 
   return currentScreen === 'main' ? <MainScreen /> : <ViaturasScreen />;
 }
-
-export default IndexPage;
