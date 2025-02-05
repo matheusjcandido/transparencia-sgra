@@ -23,11 +23,14 @@ jobs:
           node-version: "20"
           cache: 'npm'
       
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Create lock file
+        run: npm install --package-lock-only
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      
-      - name: Install dependencies
-        run: npm ci
       
       - name: Build with Next.js
         run: npm run build
